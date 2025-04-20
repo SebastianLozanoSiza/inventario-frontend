@@ -10,3 +10,22 @@ export const obtainCategories = async () => {
     }
 }
 
+export const createCategories = async (category) => {
+    try {
+        const response = await fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(category)
+        });
+
+        if (!response.ok) {
+            throw new Error("Error al crear la categoría");
+        }
+
+        return await response.json();
+    } catch (error) {
+        console.error("Error al crear categoría:", error);
+    }
+};
