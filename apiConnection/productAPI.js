@@ -1,4 +1,4 @@
-const url = "http://localhost:5000/api/productos";
+const url = "https://inventario-ueoa.onrender.com/api/productos";
 
 export const obtainProducts = async () => {
     try{
